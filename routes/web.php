@@ -9,7 +9,6 @@ Route::get('/', FrontEnd::class); // Route to Livewire component
 Route::get('/daftar', [FrontEnd::class, 'daftar']); // Route to Livewire component
 Route::get('/lupa-kata-sandi', [FrontEnd::class, 'lupaKataSandi']); // Route to Livewire component
 
-Route::prefix('admin')->middleware('auth')->group(function () { 
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/dashboard', BackedEnd::class); // Route to Livewire component
 });
-
