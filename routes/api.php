@@ -8,8 +8,13 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('auth:sanctum');
 
 Route::prefix('/v2/android')->group(function () {
-    Route::post('daftar_pegawai',               [AuthController::class, 'registerPNS']);
+    Route::post('daftar_pegawai',               [AuthController::class, 'registerASN']);
     Route::post('daftar_pegawai/phl',           [AuthController::class, 'registerPHL']);
+
+    Route::post('login',                        [AuthController::class, 'loginASN']);
+    Route::post('login/phl',                    [AuthController::class, 'loginPHL']);
+
+    Route::get('me',                            [AuthController::class, 'me']);
 });
 
 Route::get('/test', function () {
