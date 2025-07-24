@@ -1001,8 +1001,6 @@ return new class extends Migration
 
         Schema::dropIfExists('status');
 
-        Schema::dropIfExists('sessions');
-
         Schema::dropIfExists('rekap_pns_baru');
 
         Schema::dropIfExists('rekap_pns');
@@ -1035,10 +1033,6 @@ return new class extends Migration
 
         Schema::dropIfExists('keys');
 
-        Schema::dropIfExists('jobs');
-
-        Schema::dropIfExists('job_batches');
-
         Schema::dropIfExists('jam_shift');
 
         Schema::dropIfExists('jam_guru');
@@ -1048,8 +1042,6 @@ return new class extends Migration
         Schema::dropIfExists('jam_absen_normal');
 
         Schema::dropIfExists('jam_absen');
-
-        Schema::dropIfExists('failed_jobs');
 
         Schema::dropIfExists('dt_pns');
 
@@ -1070,10 +1062,6 @@ return new class extends Migration
         Schema::dropIfExists('changelog_query');
 
         Schema::dropIfExists('changelog_app');
-
-        Schema::dropIfExists('cache_locks');
-
-        Schema::dropIfExists('cache');
 
         Schema::dropIfExists('absen_reguler_test');
 
