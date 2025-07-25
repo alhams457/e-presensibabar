@@ -9,40 +9,36 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class RefKordinat
+ * Class Clustersenin
  *
- * @property int $id_kordinat
- * @property int|null $kd_opd
- * @property int|null $id_lokasi
- * @property float|null $lat_opd
- * @property float|null $lon_opd
+ * @property int $id_cluster_opd
+ * @property int $kd_opd
+ * @property float $lat_opd
+ * @property float $lon_opd
  * @property float $radius
- * @property int $stts_edit
  *
  * @package App\Models
  */
-class RefKordinat extends Model
+class Clustersenin extends Model
 {
-	protected $table = 'ref_kordinat';
-	protected $primaryKey = 'id_kordinat';
+	protected $table = 'clustersenin';
+	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
+		'id_cluster_opd' => 'int',
 		'kd_opd' => 'int',
-		'id_lokasi' => 'int',
 		'lat_opd' => 'float',
 		'lon_opd' => 'float',
-		'radius' => 'float',
-		'stts_edit' => 'int'
+		'radius' => 'float'
 	];
 
 	protected $fillable = [
+		'id_cluster_opd',
 		'kd_opd',
-		'id_lokasi',
 		'lat_opd',
 		'lon_opd',
-		'radius',
-		'stts_edit'
+		'radius'
 	];
 
     public function opd()

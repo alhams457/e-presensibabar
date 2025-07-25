@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class JamAbsen
+ * Class JamAbsenRamdhan
  * 
  * @property int $id
  * @property int $kd_presensi
@@ -26,9 +26,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class JamAbsen extends Model
+class JamAbsenRamdhan extends Model
 {
-	protected $table = 'jam_absen';
+	protected $table = 'jam_absen_ramdhan';
 	public $timestamps = false;
 
 	protected $casts = [

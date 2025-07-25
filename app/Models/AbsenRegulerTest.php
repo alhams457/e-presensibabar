@@ -10,11 +10,11 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class AbsenRegulerPhl
+ * Class AbsenRegulerTest
  *
  * @property int $id
  * @property string $uuid
- * @property string $nik
+ * @property string $nip
  * @property string $nama
  * @property float|null $lat
  * @property float|null $lon
@@ -28,9 +28,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class AbsenRegulerPhl extends Model
+class AbsenRegulerTest extends Model
 {
-	protected $table = 'absen_reguler_phl';
+	protected $table = 'absen_reguler_test';
 	public $timestamps = false;
 
 	protected $casts = [
@@ -45,7 +45,7 @@ class AbsenRegulerPhl extends Model
 
 	protected $fillable = [
 		'uuid',
-		'nik',
+		'nip',
 		'nama',
 		'lat',
 		'lon',
@@ -57,9 +57,4 @@ class AbsenRegulerPhl extends Model
 		'kd_kehadiran',
 		'image_upload'
 	];
-
-    public function userPhl()
-    {
-        return $this->belongsTo(Userphl::class, 'uuid', 'uuid');
-    }
 }

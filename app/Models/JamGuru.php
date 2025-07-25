@@ -10,14 +10,13 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class JamAbsen
+ * Class JamGuru
  * 
  * @property int $id
  * @property int $kd_presensi
  * @property int $kd_subpresensi
  * @property Carbon $start_app
  * @property Carbon $start_checkin
- * @property Carbon $start_checkin_jumat
  * @property Carbon $start_breakin
  * @property Carbon $start_breakin_jumat
  * @property Carbon $start_checkout
@@ -26,9 +25,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class JamAbsen extends Model
+class JamGuru extends Model
 {
-	protected $table = 'jam_absen';
+	protected $table = 'jam_guru';
 	public $timestamps = false;
 
 	protected $casts = [
@@ -36,7 +35,6 @@ class JamAbsen extends Model
 		'kd_subpresensi' => 'int',
 		'start_app' => 'datetime',
 		'start_checkin' => 'datetime',
-		'start_checkin_jumat' => 'datetime',
 		'start_breakin' => 'datetime',
 		'start_breakin_jumat' => 'datetime',
 		'start_checkout' => 'datetime',
@@ -49,7 +47,6 @@ class JamAbsen extends Model
 		'kd_subpresensi',
 		'start_app',
 		'start_checkin',
-		'start_checkin_jumat',
 		'start_breakin',
 		'start_breakin_jumat',
 		'start_checkout',

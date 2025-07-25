@@ -10,56 +10,52 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class AbsenRegulerPhl
- *
+ * Class AbsenBaru
+ * 
  * @property int $id
  * @property string $uuid
- * @property string $nik
+ * @property string $nip
  * @property string $nama
  * @property float|null $lat
  * @property float|null $lon
  * @property string|null $image
  * @property Carbon $tanggal
- * @property Carbon|null $waktu
- * @property int $status
+ * @property Carbon|null $waktu_pagi
+ * @property Carbon|null $waktu_siang
+ * @property Carbon|null $waktu_sore
  * @property Carbon|null $selisih
  * @property int $kd_kehadiran
- * @property string|null $image_upload
  *
  * @package App\Models
  */
-class AbsenRegulerPhl extends Model
+class AbsenBaru extends Model
 {
-	protected $table = 'absen_reguler_phl';
+	protected $table = 'absen_baru';
 	public $timestamps = false;
 
 	protected $casts = [
 		'lat' => 'float',
 		'lon' => 'float',
 		'tanggal' => 'datetime',
-		'waktu' => 'datetime',
-		'status' => 'int',
+		'waktu_pagi' => 'datetime',
+		'waktu_siang' => 'datetime',
+		'waktu_sore' => 'datetime',
 		'selisih' => 'datetime',
 		'kd_kehadiran' => 'int'
 	];
 
 	protected $fillable = [
 		'uuid',
-		'nik',
+		'nip',
 		'nama',
 		'lat',
 		'lon',
 		'image',
 		'tanggal',
-		'waktu',
-		'status',
+		'waktu_pagi',
+		'waktu_siang',
+		'waktu_sore',
 		'selisih',
-		'kd_kehadiran',
-		'image_upload'
+		'kd_kehadiran'
 	];
-
-    public function userPhl()
-    {
-        return $this->belongsTo(Userphl::class, 'uuid', 'uuid');
-    }
 }

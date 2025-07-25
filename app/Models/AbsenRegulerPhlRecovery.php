@@ -10,7 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class AbsenRegulerPhl
+ * Class AbsenRegulerPhlRecovery
  *
  * @property int $id
  * @property string $uuid
@@ -28,9 +28,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @package App\Models
  */
-class AbsenRegulerPhl extends Model
+class AbsenRegulerPhlRecovery extends Model
 {
-	protected $table = 'absen_reguler_phl';
+	protected $table = 'absen_reguler_phl_recovery';
 	public $timestamps = false;
 
 	protected $casts = [
