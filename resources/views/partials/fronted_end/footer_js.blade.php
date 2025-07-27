@@ -17,3 +17,26 @@
   <script src="{{ asset('assets/fronted_end/js/main.js') }}"></script>
   <script src="{{ asset('assets/fronted_end/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+        // Menangani event untuk menutup modal
+        document.querySelectorAll('.btn-close-modal').forEach(button => {
+            button.addEventListener('click', function () {
+                const modalId = this.closest('.modal').id; // Mendapatkan ID modal yang sedang terbuka
+                const targetModal = document.getElementById(modalId);
+                
+                // Cek apakah modal ada dan sudah diinisialisasi
+                if (targetModal) {
+                    const modalInstance = bootstrap.Modal.getInstance(targetModal);
+                    if (modalInstance) {
+                        modalInstance.hide(); // Sembunyikan modal
+                    } else {
+                        console.warn("Modal instance tidak ditemukan, mungkin modal belum ditampilkan.");
+                    }
+                } else {
+                    console.error("Modal dengan ID " + modalId + " tidak ditemukan.");
+                }
+            });
+        });
+    });
+</script>

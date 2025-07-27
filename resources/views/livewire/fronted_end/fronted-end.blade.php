@@ -4,6 +4,5 @@
    @section('title', $title)
 
    @section('content')
-       {{-- <h1>Fronted End</h1> --}}
 
    @endsection

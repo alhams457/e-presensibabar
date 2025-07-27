@@ -7,9 +7,7 @@
       @include('partials.fronted_end.navigation')
 
       <a class="btn-getstarted" href="#loginModal" data-bs-toggle="modal">Masuk</a>
-      {{-- <a class="btn-getstarted" href="javascript:void(0);" onclick="openModalDaftar()">Daftar</a> --}}
-      {{-- <a data-bs-toggle="modal" href="#myModal" class="btn btn-primary">Launch modal</a> --}}
-      {{-- <a data-bs-toggle="modal" href="#loginModal" class="btn btn-primary">Masuk</a> --}}
+
 
 
     </div>

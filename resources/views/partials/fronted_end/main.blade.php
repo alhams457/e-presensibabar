@@ -1,4 +1,4 @@
-<main class="main">
+{{-- <main class="main"> --}}
 
     <!-- Hero Section -->
     <section id="hero" class="hero section">
@@ -1323,98 +1323,9 @@
 
     </section><!-- /Contact Section -->
 
-    <div class="modal" id="loginModal"> 
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="container-xxl">
-          <div class="row vh-100 d-flex justify-content-center">
-              <div class="col-12 align-self-center">
-                  <div class="card-body">
-                      <div class="row">
-                          <div class="col-lg-12 mx-auto">
-                              <div class="card">
-                                  <div class="card-body p-0 bg-black auth-header-box rounded-top">
-                                      <div class="text-center p-3">
-                                          <a href="{{url('/')}}" class="logo logo-admin">
-                                              <img src="{{asset('assets/fronted_end/img/logo-sm.png')}}" height="50" alt="logo"
-                                                  class="auth-logo">
-                                          </a>
-                                          <h4 class="mt-3 mb-1 fw-semibold text-white fs-18">Mari Kita Mulai Codeqiu
-                                          </h4>
-                                          <p class="text-muted fw-medium mb-0">Masuk untuk melanjutkan ke Codeqiu.</p>
-                                      </div>
-                                  </div>
-                                  <div class="card-body">
-                                      <form class="my-4" action="index.html">
-                                          <div class="form-group mb-2">
-                                              <label class="form-label" for="username">Nama Pengguna</label>
-                                              <input type="text" class="form-control" id="username" name="username"
-                                                  placeholder="Masukkan Nama Pengguna">
-                                          </div><!--end form-group-->
-  
-                                          <div class="form-group">
-                                              <label class="form-label" for="userpassword">Kata sandi</label>
-                                              <input type="password" class="form-control" name="password"
-                                                  id="userpassword" placeholder="Masukkan kata sandi">
-                                          </div><!--end form-group-->
-  
-                                          <div class="form-group row mt-3">
-                                              <div class="col-sm-6">
-                                                  <div class="form-check form-switch form-switch-primary">
-                                                      <input class="form-check-input" type="checkbox"
-                                                          id="customSwitchPrimary">
-                                                      <label class="form-check-label" for="customSwitchPrimary">Ingat
-                                                          saya</label>
-                                                  </div>
-                                              </div><!--end col-->
-                                              <div class="col-sm-6 text-end">
-                                                  <a href="{{url('/lupa-kata-sandi')}}" class="text-muted font-13"><i
-                                                          class="dripicons-lock"></i> Lupa Kata Sandi?</a>
-                                              </div><!--end col-->
-                                          </div><!--end form-group-->
-  
-                                          <div class="form-group mb-0 row">
-                                              <div class="col-12">
-                                                  <div class="d-grid mt-3">
-                                                      <button class="btn btn-primary" type="button">Masuk <i
-                                                              class="fas fa-sign-in-alt ms-1"></i></button>
-                                                  </div>
-                                              </div><!--end col-->
-                                          </div> <!--end form-group-->
-                                      </form><!--end form-->
-                                      <div class="text-center mb-2">
-                                        <p class="text-muted">Belum punya akun ? 
-                                          <a class="btn-getstarted" data-bs-toggle="modal" href="#daftarModal">Daftar Gratis</a>
-
-                                        <h6 class="px-3 d-inline-block">Atau Login Dengan</h6>
-                                    </div>
-                                      <div class="d-flex justify-content-center">
-                                          <a href=""
-                                              class="d-flex justify-content-center align-items-center thumb-md bg-blue-subtle text-blue rounded-circle me-2">
-                                              <i class="fab fa-facebook align-self-center"></i>
-                                          </a>
-                                          <a href=""
-                                              class="d-flex justify-content-center align-items-center thumb-md bg-info-subtle text-info rounded-circle me-2">
-                                              <i class="fab fa-twitter align-self-center"></i>
-                                          </a>
-                                          <a href=""
-                                              class="d-flex justify-content-center align-items-center thumb-md bg-danger-subtle text-danger rounded-circle">
-                                              <i class="fab fa-google align-self-center"></i>
-                                          </a>
-                                      </div>
-                                  </div><!--end card-body-->
-                              </div><!--end card-->
-                          </div><!--end col-->
-                      </div><!--end row-->
-                  </div><!--end card-body-->
-              </div><!--end col-->
-          </div><!--end row-->
-      </div><!-- container -->
-      </div>
-    </div>
-    <!-- Modal Structure -->
 
     
-    <div class="modal" id="daftarModal"> 
+    {{-- <div class="modal" id="daftarModal"> 
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="container-xxl">
           <div class="row vh-100 d-flex justify-content-center">
@@ -1474,8 +1385,7 @@
                                       </form><!--end form-->
                                       <div class="text-center mb-2">
                                         <p class="text-muted">Belum punya akun ? 
-                                          {{-- <a href="#" class="text-primary ms-2" onclick="openModalDaftar()">Daftar Gratis</a> --}}
-                                          <a class="btn-getstarted" href="javascript:void(0);" onclick="openModalDaftar()">Daftar Gratis</a>
+                                         
                                         <h6 class="px-3 d-inline-block">Atau Login  </h6>
                                     </div>
                                       <div class="d-flex justify-content-center">
@@ -1501,12 +1411,153 @@
           </div><!--end row-->
       </div><!-- container -->
       </div>
+    </div> --}}
+
+    <!-- Modal Login -->
+    <div class="modal" id="loginModal">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="row d-flex justify-content-center"> 
+              <div class="col-12 align-self-center">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-12 mx-auto">
+                        <div class="card-body p-0 bg-black auth-header-box rounded-top">
+                          <div class="text-center p-3">
+                              <a href="{{url('/')}}" class="logo logo-admin">
+                                  <img src="{{asset('assets/fronted_end/img/logo-sm.png')}}" height="50" alt="logo"
+                                      class="auth-logo">
+                              </a>
+                              <h4 class="mt-3 mb-1 fw-semibold text-white fs-18">Mari Kita Mulai Codeqiu
+                              </h4>
+                              <p class="text-muted fw-medium mb-0">Masuk untuk melanjutkan ke Codeqiu.</p>
+                          </div>
+                        </div>
+                        <div class="modal-body">
+                          <div class="card-body">
+                              <form class="my-4" action="index.html">
+                                <div class="form-group mb-2">
+                                    <label class="form-label" for="username">Nama Pengguna</label>
+                                    <input type="text" class="form-control" id="username" name="username"
+                                        placeholder="Masukkan Nama Pengguna">
+                                </div><!--end form-group-->
+                                <div class="form-group">
+                                    <label class="form-label" for="userpassword">Kata sandi</label>
+                                    <input type="password" class="form-control" name="password"
+                                        id="userpassword" placeholder="Masukkan kata sandi">
+                                </div><!--end form-group-->
+                                <div class="form-group row mt-3">
+                                    <div class="col-sm-6">
+                                        <div class="form-check form-switch form-switch-primary">
+                                            <input class="form-check-input" type="checkbox"
+                                                id="customSwitchPrimary">
+                                            <label class="form-check-label" for="customSwitchPrimary">Ingat
+                                                saya</label>
+                                        </div>
+                                    </div><!--end col-->
+                                    <div class="col-sm-6 text-end">
+                                        <a href="{{url('/lupa-kata-sandi')}}" class="text-muted font-13"><i
+                                                class="dripicons-lock"></i> Lupa Kata Sandi?</a>
+                                    </div><!--end col-->
+                                </div><!--end form-group-->
+                                <div class="form-group mb-0 row">
+                                    <div class="col-12">
+                                        <div class="d-grid mt-3">
+                                            <button class="btn btn-primary" type="button">Masuk <i class="fas fa-sign-in-alt ms-1"></i></button>
+                                        </div>
+                                    </div><!--end col-->
+                                </div> <!--end form-group-->
+                            </form><!--end form-->
+
+                            <div class="text-center mb-2">
+                              <p class="text-muted">Belum punya akun ? 
+                                <a href="#daftarModal" data-bs-toggle="modal" data-bs-target="#daftarModal"  class="text-primary ms-2">Daftar</a>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
 
+    <!-- Modal Daftar -->
+    <div class="modal" id="daftarModal">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="card-body p-0 bg-black auth-header-box rounded-top">
+              <div class="text-center p-3">
+                  <a href="{{url('/')}}" class="logo logo-admin">
+                      <img src="{{asset('assets/fronted_end/img/logo-sm.png')}}" height="50" alt="logo"
+                          class="auth-logo">
+                  </a>
+                  <h4 class="mt-3 mb-1 fw-semibold text-white fs-18">Buat Akun
+                  </h4>
+                  <p class="text-muted fw-medium mb-0">Masukkan detail Anda untuk membuat akun Anda hari ini.</p>
+              </div>
+            </div>
+              <div class="modal-body">
+                  <form>
 
+                    <form class="my-4" action="index.html">            
+                      <div class="form-group mb-2">
+                          <label class="form-label" for="username">Username</label>
+                          <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">                               
+                      </div><!--end form-group--> 
+
+                      <div class="form-group mb-2">
+                          <label class="form-label" for="useremail">Email</label>
+                          <input type="email" class="form-control" id="useremail" name="user email" placeholder="Enter email">                               
+                      </div><!--end form-group--> 
+
+                      <div class="form-group mb-2">
+                          <label class="form-label" for="userpassword">Password</label>                                            
+                          <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">                            
+                      </div><!--end form-group--> 
+
+                      <div class="form-group mb-2">
+                          <label class="form-label" for="Confirmpassword">ConfirmPassword</label>                                            
+                          <input type="password" class="form-control" name="password" id="Confirmpassword" placeholder="Enter Confirm password">                            
+                      </div><!--end form-group--> 
+
+                      <div class="form-group mb-2">
+                          <label class="form-label" for="mobileNo">Mobile Number</label>
+                          <input type="text" class="form-control" id="mobileNo" name="mobile number" placeholder="Enter Mobile Number">                               
+                      </div><!--end form-group--> 
+
+                      <div class="form-group row mt-3">
+                          <div class="col-12">
+                              <div class="form-check form-switch form-switch-primary">
+                                  <input class="form-check-input" type="checkbox" id="customSwitchPrimary">
+                                  <label class="form-check-label" for="customSwitchPrimary">By registering you agree to the Dastone <a href="#" class="text-primary">Terms of Use</a></label>
+                              </div>
+                          </div><!--end col--> 
+                      </div><!--end form-group--> 
+
+                      <div class="form-group mb-0 row">
+                          <div class="col-12">
+                              <div class="d-grid mt-3">
+                                  <button class="btn btn-primary" type="button">Log In <i class="fas fa-sign-in-alt ms-1"></i></button>
+                              </div>
+                          </div><!--end col--> 
+                      </div> <!--end form-group-->                           
+                  </form>
+
+                      <!-- Form daftar -->
+                        <button type="button" class="btn-getstarted" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
     
 
-    <div class="modal" id="myModal">
+    {{-- <div class="modal" id="myModal">
       <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -1543,6 +1594,6 @@
             </div>
           </div>
         </div>
-    </div>
+    </div> --}}
 
-  </main>
+  {{-- </main> --}}
