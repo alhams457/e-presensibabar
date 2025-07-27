@@ -18,6 +18,7 @@ class FrontEnd extends Component
 
     public function render()
     {
-        return view('livewire.fronted_end.fronted-end')->layout('components.layouts.fronted_end.fronted_end');
+        $title = 'E-Presensi Bangka Barat';
+        return view('livewire.fronted_end.fronted-end', compact('title'))->layout('components.layouts.fronted_end.fronted_end');
     }
 }
