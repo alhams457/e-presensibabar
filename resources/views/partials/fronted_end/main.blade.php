@@ -11,7 +11,7 @@
               </div>
 
               <div class="main-heading">
-                <h1>E-PRESENSI <br>DESIGN</h1>
+                <h1>E-PRESENSI <br>BANGKA BARAT</h1>
               </div>
 
               <div class="divider"></div>
