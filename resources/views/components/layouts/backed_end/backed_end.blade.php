@@ -13,7 +13,7 @@
         <div class="page-wrapper">
          {{ $slot }}
         </div>
-        @include('partials.backed_end.footer_js')
+        @include('partials.backed_end.footer_js') 
         @livewireScripts
       </div>
 
