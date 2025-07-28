@@ -16,7 +16,6 @@
 /public/build
 /public/hot
 /public/storage
-/public/assets
 /storage/*.key
 /storage/pail
 /vendor
@@ -24,3 +23,11 @@ Homestead.json
 Homestead.yaml
 Thumbs.db
 /public_html
+
+**/caddy
+frankenphp
+frankenphp-worker.php
+
+**/caddy
+frankenphp
+frankenphp-worker.php
