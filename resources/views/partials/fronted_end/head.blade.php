@@ -20,4 +20,4 @@
         <link href="{{ asset('assets/fronted_end/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
         <!-- Main CSS File -->
         <link href="{{ asset('assets/fronted_end/css/main.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/fronted_end/css/app.min.css') }}" rel="stylesheet">
+        {{-- <link href="{{ asset('assets/fronted_end/css/app.min.css') }}" rel="stylesheet"> --}}
