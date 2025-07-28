@@ -3,6 +3,7 @@
 namespace App\Livewire\BackedEnd;
 
 use Livewire\Component;
+use Livewire\Attributes\Layout;
 
 class Reset extends Component
 {
