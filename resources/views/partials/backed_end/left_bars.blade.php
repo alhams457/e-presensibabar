@@ -88,7 +88,7 @@
                                     <a href="projects-board.html" class="nav-link ">Board</a>
                                 </li><!--end nav-item-->
                                 <li class="nav-item">
-                                    <a href="projects-teams.html" class="nav-link ">Teams</a>
+                                    <a href="projects-teams.html" class="nav-link ">Tim</a>
                                 </li><!--end nav-item-->
                                 <li class="nav-item">
                                     <a href="projects-files.html" class="nav-link ">Files</a>
