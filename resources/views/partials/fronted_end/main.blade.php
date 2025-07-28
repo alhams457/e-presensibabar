@@ -1,5 +1,3 @@
-{{-- <main class="main"> --}}
-
     <!-- Hero Section -->
     <section id="hero" class="hero section">
       <div class="container">
@@ -1505,95 +1503,54 @@
 
                     <form class="my-4" action="index.html">            
                       <div class="form-group mb-2">
-                          <label class="form-label" for="username">Username</label>
-                          <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">                               
+                          <label class="form-label" for="username">Nama Pengguna</label>
+                          <input type="text" class="form-control" id="username" name="username" placeholder="Masukkan Nama Pengguna">                               
                       </div><!--end form-group--> 
 
                       <div class="form-group mb-2">
                           <label class="form-label" for="useremail">Email</label>
-                          <input type="email" class="form-control" id="useremail" name="user email" placeholder="Enter email">                               
+                          <input type="email" class="form-control" id="useremail" name="user email" placeholder="Masukkan Email">                               
                       </div><!--end form-group--> 
 
                       <div class="form-group mb-2">
-                          <label class="form-label" for="userpassword">Password</label>                                            
-                          <input type="password" class="form-control" name="password" id="userpassword" placeholder="Enter password">                            
+                          <label class="form-label" for="userpassword">Kata Sandi</label>                                            
+                          <input type="password" class="form-control" name="password" id="userpassword" placeholder="Masukkan Kata Sandi">                            
                       </div><!--end form-group--> 
 
                       <div class="form-group mb-2">
-                          <label class="form-label" for="Confirmpassword">ConfirmPassword</label>                                            
-                          <input type="password" class="form-control" name="password" id="Confirmpassword" placeholder="Enter Confirm password">                            
+                          <label class="form-label" for="Confirmpassword">Konfirmasi Kata Sandi</label>                                            
+                          <input type="password" class="form-control" name="password" id="Confirmpassword" placeholder="Masukkan Konfirmasi Kata Sandi">                            
                       </div><!--end form-group--> 
 
                       <div class="form-group mb-2">
-                          <label class="form-label" for="mobileNo">Mobile Number</label>
-                          <input type="text" class="form-control" id="mobileNo" name="mobile number" placeholder="Enter Mobile Number">                               
+                          <label class="form-label" for="mobileNo">Nomor Telepon</label>
+                          <input type="text" class="form-control" id="mobileNo" name="mobile number" placeholder="Masukkan Nomor Telepon">                               
                       </div><!--end form-group--> 
 
                       <div class="form-group row mt-3">
                           <div class="col-12">
                               <div class="form-check form-switch form-switch-primary">
                                   <input class="form-check-input" type="checkbox" id="customSwitchPrimary">
-                                  <label class="form-check-label" for="customSwitchPrimary">By registering you agree to the Dastone <a href="#" class="text-primary">Terms of Use</a></label>
+                                  <label class="form-check-label" for="customSwitchPrimary">Dengan mendaftar, Anda setuju dengan <a href="#" class="text-primary">Ketentuan Penggunaan</a></label>
                               </div>
                           </div><!--end col--> 
                       </div><!--end form-group--> 
 
                       <div class="form-group mb-0 row">
-                          <div class="col-12">
-                              <div class="d-grid mt-3">
-                                  <button class="btn btn-primary" type="button">Log In <i class="fas fa-sign-in-alt ms-1"></i></button>
-                              </div>
-                          </div><!--end col--> 
+                        <div class="col-12">
+                          <div class="d-grid mt-3">
+                              <button class="btn btn-primary" type="button">Daftar <i class="fas fa-sign-in-alt ms-1"></i></button>
+                          </div>
+                        </div>
                       </div> <!--end form-group-->                           
                   </form>
 
-                      <!-- Form daftar -->
-                        <button type="button" class="btn-getstarted" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-
-                  </form>
+                    <div class="text-center">
+                      <p class="text-muted">Sudah punya akun ?  <a href="#loginModal" data-bs-toggle="modal" data-bs-target="#loginModal" class="text-primary ms-2">Log in</a></p>
+                    {{-- <a href="#loginModal" data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-primary">Daftar  <i class="fas fa-sign-in-alt ms-1"></i></a> --}}
+                </div>
               </div>
           </div>
       </div>
     </div>
     
-
-    {{-- <div class="modal" id="myModal">
-      <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Modal title</h4>    
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-            </div><div class="container"></div>
-            <div class="modal-body">
-              Content for the dialog / modal goes here.
-              <a data-bs-toggle="modal" href="#myModal2" class="btn btn-primary">Launch modal</a>
-            </div>
-            <div class="modal-footer">
-              <a href="#" data-bs-dismiss="modal" class="btn btn-outline-dark">Close</a>
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="modal" id="myModal2" data-bs-backdrop="static">
-      <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">2nd Modal title</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-            </div><div class="container"></div>
-            <div class="modal-body">
-              Content for the dialog / modal goes here.
-              Content for the dialog / modal goes here.
-              Content for the dialog / modal goes here.
-              Content for the dialog / modal goes here.
-              Content for the dialog / modal goes here.
-            </div>
-            <div class="modal-footer">
-              <a href="#" data-bs-dismiss="modal" class="btn btn-outline-dark">Close</a>
-              <a href="#" class="btn btn-primary">Save changes</a>
-            </div>
-          </div>
-        </div>
-    </div> --}}
-
-  {{-- </main> --}}
