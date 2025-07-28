@@ -7,16 +7,6 @@ use Livewire\Attributes\Layout;
 
 class FrontEnd extends Component
 {
-    // public function daftar()
-    // {
-    //     return view('livewire.fronted_end.daftar')->layout('components.layouts.fronted_end.fronted_end');
-    // }
-
-    // public function lupaKataSandi()
-    // {
-    //     return view('livewire.fronted_end.lupa-kata-sandi')->layout('components.layouts.fronted_end.fronted_end');
-    // }
-
     #[Layout('components.layouts.fronted_end.fronted_end')]
     public function render()
     {
