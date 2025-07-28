@@ -1,0 +1,42 @@
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('assets/fronted_end/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/fronted_end/vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('assets/fronted_end/vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('assets/fronted_end/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/fronted_end/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('assets/fronted_end/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ asset('assets/fronted_end/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+
+  <!-- Main JS File -->
+  <script src="{{ asset('assets/fronted_end/js/main.js') }}"></script>
+  <script src="{{ asset('assets/fronted_end/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/fronted_end/js/jquery.js') }}"></script>
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+        // Menangani event untuk menutup modal
+        document.querySelectorAll('.btn-close-modal').forEach(button => {
+            button.addEventListener('click', function () {
+                const modalId = this.closest('.modal').id; // Mendapatkan ID modal yang sedang terbuka
+                const targetModal = document.getElementById(modalId);
+                
+                // Cek apakah modal ada dan sudah diinisialisasi
+                if (targetModal) {
+                    const modalInstance = bootstrap.Modal.getInstance(targetModal);
+                    if (modalInstance) {
+                        modalInstance.hide(); // Sembunyikan modal
+                    } else {
+                        console.warn("Modal instance tidak ditemukan, mungkin modal belum ditampilkan.");
+                    }
+                } else {
+                    console.error("Modal dengan ID " + modalId + " tidak ditemukan.");
+                }
+            });
+        });
+    });
+</script>
