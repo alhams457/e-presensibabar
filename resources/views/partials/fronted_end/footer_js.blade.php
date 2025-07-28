@@ -16,7 +16,7 @@
   <!-- Main JS File -->
   <script src="{{ asset('assets/fronted_end/js/main.js') }}"></script>
   <script src="{{ asset('assets/fronted_end/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('assets/fronted_end/js/jquery.js') }}"></script>
+  {{-- <script src="{{ asset('assets/fronted_end/js/jquery.js') }}"></script> --}}
   <script>
    document.addEventListener('DOMContentLoaded', function () {
         // Menangani event untuk menutup modal

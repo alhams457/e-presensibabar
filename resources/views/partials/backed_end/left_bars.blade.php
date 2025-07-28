@@ -140,6 +140,18 @@
                             <span>Invoice</span>
                         </a>
                     </li><!--end nav-item-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                            <i class="iconoir-paste-clipboard menu-icon"></i> 
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/reset">
+                            <i class="iconoir-paste-clipboard menu-icon"></i> 
+                            <span>Reset</span>
+                        </a>
+                    </li>
                 
                     <li class="menu-label mt-2">
                         <small class="label-border">

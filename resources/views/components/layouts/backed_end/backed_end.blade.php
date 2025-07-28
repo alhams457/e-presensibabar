@@ -11,8 +11,7 @@
         @include('partials.backed_end.left_bars')
         <div class="startbar-overlay d-print-none"></div>
         <div class="page-wrapper">
-         @yield('content')
-         
+         {{ $slot }}
         </div>
         @include('partials.backed_end.footer_js')
         @livewireScripts

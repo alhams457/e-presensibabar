@@ -1,5 +1,3 @@
-{{-- <div> --}}
-{{-- @section('content') --}}
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
@@ -258,5 +256,3 @@
     
     <!--end footer-->
 </div>
-{{-- </div> --}}
-{{-- @endsection --}}
