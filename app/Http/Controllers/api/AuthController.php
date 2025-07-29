@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\api;
 
+use App\Helpers\JwtHelper;
 use App\Http\Controllers\Controller;
 use App\Models\AbsenReguler;
 use App\Models\AbsenRegulerPHL;
@@ -11,6 +12,7 @@ use App\Models\Keys;
 use App\Models\Userphl;
 use App\Models\Userpns;
 use App\Traits\ResponseTrait;
+use Carbon\Carbon;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Illuminate\Http\Request;
@@ -233,21 +235,31 @@ class AuthController extends Controller
             return $this->formatResponse(401, "Unauthorized", null);
         }
 
-        $now = time();
+        $now = Carbon::now();
 
-        $payload = [
-            'iat'       => $now,
-            'exp'       => $now + (60 * 60),
+        $accessTokenPayload = [
             'uuid'      => $user->uuid,
-            'usertype'  => 'ASN'
+            'usertype'  => 'ASN',
+            'iat'       => $now->timestamp,
+            'exp'       => $now->addSeconds((int)env('AUTH_TOKEN_TTL'))->timestamp
         ];
 
-        $token = JWT::encode($payload, env('JWT_SECRET'), 'HS256');
+        $accessToken = JWT::encode($accessTokenPayload, env('JWT_SECRET'), 'HS512');
+
+        $refreshTokenPayload = [
+            'uuid'      => $user->uuid,
+            'usertype'  => 'ASN',
+            'iat'       => $now->timestamp,
+            'exp'       => $now->addSeconds((int)env('REFRESH_TOKEN_TTL'))->timestamp
+        ];
+
+        $refreshToken = JWT::encode($refreshTokenPayload, env('JWT_SECRET'), 'HS512');
 
         return $this->formatResponse(200, 'Login Success', [
-            'access_token' => (string)$token,
+            'access_token' => (string)$accessToken,
+            'refresh_token' => (string)$refreshToken,
             'token_type' => 'bearer',
-            'expires_in' => $now + (60 * 60),
+            'expires_in' => $now->timestamp + (60 * 60),
         ]);
     }
 
@@ -262,48 +274,100 @@ class AuthController extends Controller
             return $this->formatResponse(401, "Unauthorized", null);
         }
 
-        $now = time();
+        $now = Carbon::now();
 
-        $payload = [
-            'iat'       => $now,
-            'exp'       => $now + (60 * 60),
+        $accessTokenPayload = [
             'uuid'      => $user->uuid,
-            'usertype'  => 'PHL'
+            'usertype'  => 'PHL',
+            'iat'       => $now->timestamp,
+            'exp'       => $now->addSeconds((int)env('AUTH_TOKEN_TTL'))->timestamp
         ];
 
-        $token = JWT::encode($payload, env('JWT_SECRET'), 'HS256');
+        $accessToken = JWT::encode($accessTokenPayload, env('JWT_SECRET'), 'HS512');
+
+        $refreshTokenPayload = [
+            'uuid'      => $user->uuid,
+            'usertype'  => 'PHL',
+            'iat'       => $now->timestamp,
+            'exp'       => $now->addSeconds((int)env('REFRESH_TOKEN_TTL'))->timestamp
+        ];
+
+        $refreshToken = JWT::encode($refreshTokenPayload, env('JWT_SECRET'), 'HS512');
 
         return $this->formatResponse(200, 'Login Success', [
-            'access_token' => (string)$token,
+            'access_token' => (string)$accessToken,
+            'refresh_token' => (string)$refreshToken,
             'token_type' => 'bearer',
-            'expires_in' => $now + (60 * 60),
+            'expires_in' => $now->timestamp + (60 * 60),
         ]);
     }
 
     public function me(Request $request)
     {
-        $token = $request->header('Authorization');
+        $token = $request->bearerToken();
 
         if ($token) {
-            $token = Str::replaceFirst('Bearer ', '', $token);
-
-            $decoded = JWT::decode($token, new Key(env('JWT_SECRET'), 'HS256'));
+            $decoded = JWT::decode((string)$token, new Key(env('JWT_SECRET'), 'HS512'));
 
             $user = null;
             if ($decoded->usertype == 'ASN') {
                 $user = Userpns::with([
                     'dtPns',
-                    'dtPns.tblOpd:nama_opd',
+                    'dtPns.jamAbsen',
+                    'dtPns.refKordinat',
+                    'dtPns.nmlokasikantor',
+                    'dtPns.opd',
                 ])->where('uuid', $decoded->uuid)->first();
             } else if ($decoded->usertype == 'PHL') {
                 $user = Userphl::with([
                     'dtPhl',
-                    'dtPhl.tblOpd:nama_opd',
+                    'dtPhl.jamAbsen',
+                    'dtPhl.refKordinat',
+                    'dtPhl.nmlokasikantor',
+                    'dtPhl.opd',
                 ])->where('uuid', $decoded->uuid)->first();
             }
             return $this->formatResponse(200, 'Success', $user);
         }
 
         return $this->formatResponse(200, 'Success', []);
+    }
+
+    public function refresh(Request $request)
+    {
+        $token = $request->input('refresh_token');
+
+        if (!$token) {
+            return $this->formatResponse(401, 'Refresh token missing');
+        }
+
+        $decoded = JWT::decode((string)$token, new Key(env('JWT_REFRESH_SECRET'), 'HS512'));
+
+        $now = Carbon::now();
+
+        $accessTokenPayload = [
+            'uuid'      => $decoded->uuid,
+            'usertype'  => $decoded->usertype,
+            'iat'       => $now->timestamp,
+            'exp'       => $now->addSeconds((int)env('AUTH_TOKEN_TTL'))->timestamp
+        ];
+
+        $accessToken = JWT::encode($accessTokenPayload, env('JWT_SECRET'), 'HS512');
+
+        $refreshTokenPayload = [
+            'uuid'      => $decoded->uuid,
+            'usertype'  => $decoded->usertype,
+            'iat'       => $now->timestamp,
+            'exp'       => $now->addSeconds((int)env('REFRESH_TOKEN_TTL'))->timestamp
+        ];
+
+        $refreshToken = JWT::encode($refreshTokenPayload, env('JWT_SECRET'), 'HS512');
+
+        return $this->formatResponse(200, 'Success', [
+            'access_token' => (string)$accessToken,
+            'refresh_token' => (string)$refreshToken,
+            'token_type' => 'bearer',
+            'expires_in' => $now->timestamp + (60 * 60),
+        ]);
     }
 }

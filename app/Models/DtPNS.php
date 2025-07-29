@@ -7,9 +7,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Reedware\LaravelCompositeRelations\HasCompositeRelations;
 
 /**
- * Class DtPn
+ * Class DtPns
  *
  * @property int $id
  * @property string $nip
@@ -31,6 +32,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class DtPns extends Model
 {
+    use HasCompositeRelations;
+
 	protected $table = 'dt_pns';
 	public $timestamps = false;
 
@@ -39,6 +42,8 @@ class DtPns extends Model
 		'kd_opd' => 'int',
 		'kd_unit_opd' => 'int',
 		'kd_subunit_opd' => 'int',
+		'kd_presensi' => 'int',
+		'kd_subpresensi' => 'int',
 		'kd_subsubpresensi' => 'int',
 		'stts_presensi' => 'int'
 	];
@@ -70,18 +75,18 @@ class DtPns extends Model
         return $this->belongsTo(TblOpd::class, 'kd_opd', 'kd_opd');
     }
 
-    public function getJamAbsenAttribute()
+    public function jamAbsen()
     {
-        return JamAbsen::where('kd_presensi', $this->kd_presensi)->where('kd_subpresensi', $this->kd_subpresensi)->first();
+        return $this->compositeBelongsTo(JamAbsen::class, ['kd_presensi', 'kd_subpresensi'], ['kd_presensi', 'kd_subpresensi'], 'and');
     }
 
-    public function getRefKordinatAttribute()
+    public function refKordinat()
     {
-        return RefKordinat::where('kd_opd', $this->kd_opd)->where('id_lokasi', $this->id_lokasi)->first();
+        return $this->compositeBelongsTo(RefKordinat::class, ['kd_opd', 'id_lokasi'], ['kd_opd', 'id_lokasi'], 'and');
     }
 
-    public function getTblnmlokasikantorAttribute()
+    public function nmlokasikantor()
     {
-        return RefKordinat::where('kd_opd', $this->kd_opd)->where('id_lokasi', $this->id_lokasi)->first();
+        return $this->compositeBelongsTo(Tblnmlokasikantor::class, ['kd_opd', 'id_lokasi'], ['kd_opd', 'id_lokasi'], 'and');
     }
 }
