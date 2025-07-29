@@ -31,6 +31,7 @@ class TblOpd extends Model
 		'nama_opd'
 	];
 
+
     public function unit()
     {
         return $this->hasMany(TblUnitOpd::class, 'kd_opd', 'kd_opd');

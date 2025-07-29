@@ -6,18 +6,14 @@ use App\Models\Menu;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Illuminate\Support\Facades\Auth;
-class BackedEnd extends Component
-{ 
+
+class Menus extends Component
+{
     #[Layout('components.layouts.backed_end.backed_end')]
-    
     public function render()
     {
         $user = Auth::user();
         $menu = $user->type->menu;
-        return view('livewire.backed_end.backed-end', compact('menu'));      
+        return view('partials.backed_end.left_bars', compact('menu'));
     }
-
-
-    
-
 }
