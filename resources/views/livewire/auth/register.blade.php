@@ -1,9 +1,5 @@
 <div>
-    @if (session()->has('message'))
-        <div class="alert alert-success">
-            {{ session('message') }}
-        </div>
-    @endif
+
     <form wire:submit.prevent="register" id="registerForm">          
         <div class="form-group mb-2">
             <label class="form-label" for="username">Nama Pengguna</label>
@@ -26,7 +22,7 @@
         </div><!--end form-group--> 
 
         <div class="form-group mb-2">
-            <label class="form-label" for="organisasi">Organisasi</label>
+            <label class="form-label" for="organisasi">Organisasi PD</label>
             <select name="organisasi" id="organisasi" class="form-control">
                 <option value="">Pilih Organisasi</option>
                 @foreach($organisasiOptions as $organisasi)

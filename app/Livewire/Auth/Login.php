@@ -36,20 +36,7 @@ class Login extends Component
         $this->dispatch('loginSuccess', 'Login Berhasil');
         return redirect()->to('/admin/dashboard'); // Redirect to home or dashboard
     }
-
-    
-    public function mount()
-    {
-        $this->loadOrganisasi();
-    }
-
-    public function loadOrganisasi()
-    {
-
-        
-    }
-
-    public function render()
+        public function render()
     {
         return view('livewire.auth.login');
     }

@@ -2,15 +2,17 @@
 
 namespace App\Livewire\Auth;
 
+use App\Models\TblOrganisasi;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
-// use App\Models\TblOpd;
 use App\Models\User;
 use Illuminate\Support\Str;
 
 class Register extends Component
 {
-    public $username, $email, $password;
+
+
+    public $name, $email, $password, $password_confirmation;
     public $organisasiOptions = [];
 
 
@@ -38,7 +40,20 @@ class Register extends Component
         session()->flash('message', 'Pengguna berhasil mendaftar!');
         return redirect()->to('/home'); // Redirect to home or desired page
     }
+    
 
+    public $options = [];
+
+    public function mount() // Mount the component
+    {
+        $this->select2();  
+    }
+
+    public function select2()
+    {
+        $this->organisasiOptions = TblOrganisasi::getOpdWithoutUsers(); // Adjust the route name
+        $this->options = $this->organisasiOptions;
+    }
 
     public function render()
     {

@@ -31,7 +31,12 @@ class TblOpd extends Model
 		'nama_opd'
 	];
 
-
+    public function opd($query)
+    {
+        return $query->leftJoin('users', 'tbl_opd.kd_opd', '=', 'users.kd_opd')
+        ->whereNull('users.kd_opd')
+        ->select('tbl_opd.*');
+    }
     public function unit()
     {
         return $this->hasMany(TblUnitOpd::class, 'kd_opd', 'kd_opd');
