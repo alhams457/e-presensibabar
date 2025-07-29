@@ -6,7 +6,7 @@ use App\Livewire\BackedEnd\BackedEnd;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', FrontEnd::class); // Route to Livewire component
-Route::get('/daftar', [FrontEnd::class]); // Route to Livewire component
+Route::get('/daftar',    [Register::class]); // Route to Livewire component
 Route::get('/lupa-kata-sandi', [FrontEnd::class]); // Route to Livewire component
 Route::get('/reset', Reset::class);
 Route::prefix('admin')->middleware(['auth', 'session.expiration'])->group(function () { 
