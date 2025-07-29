@@ -40,12 +40,11 @@ class JwtMiddleware
             if ($userPhl) {
                 return $next($request);
             }
+
             return $this->formatResponse(401, 'Unauthorized');
 
         } catch (Exception $e) {
             return $this->formatResponse(401, 'Unauthorized');
         }
-
-        return $next($request);
     }
 }
