@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5afdaaf3fb25841535e4cac89cf040d",
+    "content-hash": "f14b91d36013428a0a27da67c312464f",
     "packages": [
         {
             "name": "brick/math",
@@ -3786,6 +3786,64 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.0"
             },
             "time": "2025-06-25T14:20:11+00:00"
+        },
+        {
+            "name": "reedware/laravel-composite-relations",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tylernathanreed/laravel-composite-relations.git",
+                "reference": "0d32ab5aa2b868a568db847111b054e173fa83e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tylernathanreed/laravel-composite-relations/zipball/0d32ab5aa2b868a568db847111b054e173fa83e0",
+                "reference": "0d32ab5aa2b868a568db847111b054e173fa83e0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^11.0|^12.0",
+                "illuminate/support": "^11.0|^12.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.0",
+                "laravel/pint": "^1.5",
+                "mockery/mockery": "^1.6.6",
+                "php-coveralls/php-coveralls": "^2.4",
+                "phpunit/phpunit": "^10.5",
+                "reedware/laravel-relation-joins": "^8.0",
+                "reedware/sail-lite": "^1.3",
+                "symfony/var-dumper": "^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Reedware\\LaravelCompositeRelations\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tyler Reed",
+                    "email": "tylernathanreed@gmail.com"
+                }
+            ],
+            "description": "Adds the ability define composite eloquent relations.",
+            "keywords": [
+                "composite",
+                "eloquent",
+                "laravel",
+                "relation"
+            ],
+            "support": {
+                "issues": "https://github.com/tylernathanreed/laravel-composite-relations/issues",
+                "source": "https://github.com/tylernathanreed/laravel-composite-relations/tree/v5.0.0"
+            },
+            "time": "2025-06-19T23:08:12+00:00"
         },
         {
             "name": "symfony/clock",

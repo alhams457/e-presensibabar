@@ -14,7 +14,11 @@ Route::prefix('/v2/android')->group(function () {
     Route::post('login',                        [AuthController::class, 'loginASN']);
     Route::post('login/phl',                    [AuthController::class, 'loginPHL']);
 
-    Route::get('me',                            [AuthController::class, 'me']);
+    Route::post('refresh_token',                [AuthController::class, 'refresh']);
+
+    Route::middleware('jwt.auth')->group(function() {
+        Route::get('me',                            [AuthController::class, 'me']);
+    });
 });
 
 Route::get('/test', function () {

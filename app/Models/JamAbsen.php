@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class JamAbsen
- * 
+ *
  * @property int $id
  * @property int $kd_presensi
  * @property int $kd_subpresensi
@@ -34,14 +34,14 @@ class JamAbsen extends Model
 	protected $casts = [
 		'kd_presensi' => 'int',
 		'kd_subpresensi' => 'int',
-		'start_app' => 'datetime',
-		'start_checkin' => 'datetime',
-		'start_checkin_jumat' => 'datetime',
-		'start_breakin' => 'datetime',
-		'start_breakin_jumat' => 'datetime',
-		'start_checkout' => 'datetime',
-		'start_checkout_jumat' => 'datetime',
-		'stop' => 'datetime'
+		'start_app' => 'datetime:H:i:s',
+		'start_checkin' => 'datetime:H:i:s',
+		'start_checkin_jumat' => 'datetime:H:i:s',
+		'start_breakin' => 'datetime:H:i:s',
+		'start_breakin_jumat' => 'datetime:H:i:s',
+		'start_checkout' => 'datetime:H:i:s',
+		'start_checkout_jumat' => 'datetime:H:i:s',
+		'stop' => 'datetime:H:i:s'
 	];
 
 	protected $fillable = [
