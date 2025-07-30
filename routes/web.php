@@ -8,16 +8,17 @@ use App\Livewire\BackEnd\ResetPns;
 use App\Livewire\BackEnd\Dashboard;
 use App\Livewire\FrontEnd\FrontEnd;
 use Illuminate\Support\Facades\Route;
-use App\Livewire\BackEnd\DataPegawai\DataAsn;
-use App\Livewire\BackEnd\DataPegawai\DataNonAsn;
-use App\Livewire\BackEnd\SinkronisasiData\DataPresensiAsn;
-use App\Livewire\BackEnd\SinkronisasiData\DataPresensiNonAsn;
+use App\Livewire\BackEnd\Referensi\LokasiPd;
 use App\Livewire\BackEnd\RekapData\RekapAsn;
-use App\Livewire\BackEnd\RekapData\RekapNonAsn;
+use App\Livewire\BackEnd\DataPegawai\DataAsn;
 use App\Livewire\BackEnd\RekapData\HapusRekap;
+use App\Livewire\BackEnd\RekapData\RekapNonAsn;
+use App\Livewire\BackEnd\DataPegawai\DataNonAsn;
+use App\Livewire\BackEnd\Referensi\OrganisasiPd;
 use App\Livewire\BackEnd\CetakData\CetakRekapAsn;
 use App\Livewire\BackEnd\CetakData\CetakRekapNonAsn;
-use App\Livewire\BackEnd\Referensi\OrganisasiPd;
+use App\Livewire\BackEnd\SinkronisasiData\DataPresensiAsn;
+use App\Livewire\BackEnd\SinkronisasiData\DataPresensiNonAsn;
 
 Route::get('/', Home::class); // Route to Livewire component
 Route::post('/register', Register::class)->name('register');
@@ -39,5 +40,6 @@ Route::prefix('admin')
     Route::get('/cetak_rekap/cetak_rekap_asn', CetakRekapAsn::class);
     Route::get('/cetak_rekap/cetak_rekap_non_asn', CetakRekapNonAsn::class);
     Route::get('/referensi/organisasi_pd', OrganisasiPd::class);
+    Route::get('/referensi/lokasi_pd', LokasiPd::class);
 });
 
