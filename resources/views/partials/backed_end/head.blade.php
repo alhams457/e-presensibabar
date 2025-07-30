@@ -9,7 +9,6 @@
 <link rel="shortcut icon" href="{{ asset('assets/backed_end/images/favicon.ico') }}">
 
 
-
 <!-- App css -->
 <link href="{{ asset('assets/backed_end/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/backed_end/css/icons.min.css') }}" rel="stylesheet" type="text/css" />

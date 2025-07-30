@@ -7,6 +7,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class Menu
@@ -46,8 +47,32 @@ class Menu extends Model
         return $this->belongsToMany(Usertype::class, 'menu_access', 'menu_id', 'usertype_id', 'id_menu', 'id_usertype');
     }
 
-    public function subMenu()
+    public function submenu()
     {
-        return $this->belongsToMany(Submenu::class, 'menu_access', 'menu_id', 'submenu_id', 'id_menu', 'id_submenu');
+        return $this->belongsToMany(
+			Submenu::class, 
+			'menu_access', 
+			'menu_id', 
+			'submenu_id', 
+			'id_menu', 
+			'id_submenu')->where('usertype_id', Auth::user()->usertype);
+    }
+
+	public function menuAccess()
+	{
+		return $this->hasMany(MenuAccess::class, 'menu_id', 'id_menu');
+	}
+
+	public static function getActiveMenuForUser($userTypeId)
+    {
+        return self::with(['submenu' => function($query) {
+            $query->orderBy('order_no');
+        }])
+        ->whereHas('menuAccess', function($query) use ($userTypeId) {
+            $query->where('usertype_id', $userTypeId);
+        })
+        ->where('is_active', 1)
+        ->orderBy('order_no')
+        ->get();
     }
 }

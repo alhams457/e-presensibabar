@@ -1,21 +1,32 @@
-   <!-- resources/views/components/layouts/backed_end/backed_end.blade.php -->
-   <!DOCTYPE html>
-   <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-startbar="light"data-bs-theme="dark">  
-   <head>
-    @include('partials.backed_end.head')
-    @livewireStyles
-   </head>
-   <body>
-      <div>
-        @include('partials.backed_end.top_bar')
-        @include('partials.backed_end.left_bars')
-        <div class="startbar-overlay d-print-none"></div>
-        <div class="page-wrapper">
-         {{ $slot }}
-        </div>
-        @include('partials.backed_end.footer_js') 
-        @livewireScripts
-      </div>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="ltr" data-startbar="dark" data-bs-theme="dark">
 
-   </body>
-   </html>
+    <head>
+        
+
+      @include('partials.backed_end.head')
+
+    </head>
+
+    <body>
+         @include('partials.backed_end.top_bar')        
+
+        @include('partials.backed_end.left_bars')
+
+        <div class="page-wrapper">
+
+            <!-- Page Content-->
+            <div class="page-content">
+                {{ $slot }}
+                
+                @include('partials.backed_end.right_bar')
+                @include('partials.backed_end.footer')
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
+
+        @include('partials.backed_end.footer_js')
+    </body>
+    <!--end body-->
+</html>

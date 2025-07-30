@@ -1,7 +1,8 @@
+<!-- Top Bar Start -->
 <div class="topbar d-print-none">
     <div class="container-fluid">
         <nav class="topbar-custom d-flex justify-content-between" id="topbar-custom">    
-    
+
 
             <ul class="topbar-item list-unstyled d-inline-flex align-items-center mb-0">                        
                 <li>
@@ -34,7 +35,7 @@
                         <a class="dropdown-item" href="#"><img src="{{ asset('assets/backed_end/images/flags/french_flag.jpg') }}" alt="" height="15" class="me-2">French</a>
                     </div>
                 </li><!--end topbar-language-->
-    
+
                 <li class="topbar-item">
                     <a class="nav-link nav-icon" href="javascript:void(0);" id="light-dark-mode">
                         <i class="iconoir-half-moon dark-mode"></i>
@@ -49,7 +50,7 @@
                         <span class="alert-badge"></span>
                     </a>
                     <div class="dropdown-menu stop dropdown-menu-end dropdown-lg py-0">
-                    
+                
                         <h5 class="dropdown-item-text m-0 py-3 d-flex justify-content-between align-items-center">
                             Notifications <a href="#" class="badge text-body-tertiary badge-pill">
                                 <i class="iconoir-plus-circle fs-4"></i>
@@ -211,7 +212,7 @@
                                     </a><!--end-item-->
                                 </div>
                             </div>
-                        
+                    
                         </div>
                         <!-- All-->
                         <a href="pages-notifications.html" class="dropdown-item text-center text-dark fs-13 py-2">
@@ -252,3 +253,4 @@
         <!-- end navbar-->
     </div>
 </div>
+<!-- Top Bar End -->
