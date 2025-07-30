@@ -3,6 +3,7 @@
         <title>@yield('title')</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Favicons -->
         <link href="{{ asset('assets/fronted_end/img/favicon.png') }}" rel="icon">
         <link href="{{ asset('assets/fronted_end/img/apple-touch-icon.png') }}" rel="apple-touch-icon">

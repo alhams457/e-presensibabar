@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\JwtMiddleware;
+use App\Http\Middleware\CheckSessionExpiration;
 use Illuminate\Foundation\Application;
 use App\Http\Middleware\SessionExpirationMiddleware;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -15,7 +16,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
-            'session.expiration' => SessionExpirationMiddleware::class,
+            'session.expiration' => CheckSessionExpiration::class,
             'jwt.auth' => JwtMiddleware::class,
             ]);
     })

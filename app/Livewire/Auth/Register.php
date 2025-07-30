@@ -12,21 +12,24 @@ class Register extends Component
 {
 
 
-    public $name, $email, $password, $password_confirmation;
+    public $name, $email, $password, $password_confirmation, $organisasi,$username;
     public $organisasiOptions = [];
 
 
     public function register()
     {
         $this->validate([
-            'username' => 'required|unique:users',
-            'email' => 'required|email|unique:users',
+            'username' => 'required|unique:users,username',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
+            'organisasi' => 'required',
+            'password_confirmation' => 'required|same:password',
 
         ]);
         $ipAddress = request()->ip(); // Get the IP address
         User::create([
             'username' => $this->username,
+            'name' => $this->username,
             'usertype' => '3',
             'is_active' => '1',
             'ip_add_reg' => $ipAddress,
@@ -34,11 +37,14 @@ class Register extends Component
             'password' => Hash::make($this->password),
             'remember_token' => Str::random(60),
             'created_at'=>now(),
+            'created_by'=>$this->username,
+            'modified_by'=>$this->username,
+            'modified_at'=>now(),
             'kd_opd' => $this->organisasi,
         ]);
 
         session()->flash('message', 'Pengguna berhasil mendaftar!');
-        return redirect()->to('/home'); // Redirect to home or desired page
+        return redirect()->to('/'); // Redirect to home or desired page
     }
     
 

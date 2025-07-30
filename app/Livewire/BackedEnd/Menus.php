@@ -14,6 +14,6 @@ class Menus extends Component
     {
         $user = Auth::user();
         $menu = $user->type->menu;
-        return view('partials.backed_end.left_bars', compact('menu'));
+        return view('livewire.backed_end.admin.menu.menu', compact('menu'));
     }
 }
