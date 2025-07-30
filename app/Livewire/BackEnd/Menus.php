@@ -15,12 +15,15 @@ class Menus extends Component
     
     #[Computed]
     public function menus(){
-        return Menu::getActiveMenuForUser(Auth::user()->usertype);
+        $menus = Menu::getActiveMenuForUser(Auth::user()->usertype);
+        return $menus;
    }
    
     public function render()
     {
-        return view('livewire.backend.menus');
+        $menus = $this->menus(); // Call the menus method
+    // dd($menus); // This will dump the menus data
+    return view('livewire.backend.menus', ['menus' => $menus]);
         
     }
 }
