@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Submenu extends Model
 {
-	protected $table = 'submenu';
+	protected $table = 'submenus';
 	protected $primaryKey = 'id_submenu';
 	public $timestamps = false;
 
@@ -39,6 +39,6 @@ class Submenu extends Model
 
     public function menu()
     {
-        return $this->belongsTo(Menu::class, 'id_menu', 'menu_id');
+        return $this->belongsTo(Menu::class, 'id_menu', 'id_menu');
     }
 }

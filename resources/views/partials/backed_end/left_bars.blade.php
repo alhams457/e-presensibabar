@@ -40,11 +40,11 @@
                         
                         @livewire('backed_end.admin.menu.menu')
 
-                        <li class="menu-label mt-2">
+                        {{-- <li class="menu-label mt-2">
                             <span>Settings</span>
-                        </li>
+                        </li> --}}
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button"
                                 aria-expanded="false" aria-controls="sidebarDashboards"> 
                                 <i class="iconoir-report-columns menu-icon"></i>                                       
@@ -60,7 +60,7 @@
                                     </li><!--end nav-item-->
                                 </ul><!--end nav-->
                             </div>
-                        </li><!--end nav-item-->
+                        </li><!--end nav-item--> --}}
 
                     </ul>
                     <div class="update-msg text-center"> 

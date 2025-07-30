@@ -52,10 +52,10 @@ class Register extends Component
 
     public function mount() // Mount the component
     {
-        $this->select2();  
+        $this->select();  
     }
 
-    public function select2()
+    public function select()
     {
         $this->organisasiOptions = TblOrganisasi::getOpdWithoutUsers(); // Adjust the route name
         $this->options = $this->organisasiOptions;

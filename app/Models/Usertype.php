@@ -26,6 +26,10 @@ class Usertype extends Model
 		'usertype_name'
 	];
 
+    protected $casts = [
+		'id_usertype' => 'int',
+	];
+
     public function menu()
     {
         return $this->belongsToMany(Menu::class, 'menu_access', 'usertype_id', 'menu_id', 'id_usertype', 'id_menu');

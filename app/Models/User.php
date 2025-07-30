@@ -93,6 +93,6 @@ class User extends Authenticatable
 
     public function type()
     {
-        return $this->hasOne(Usertype::class, 'usertype', 'id_usertype');
+        return $this->hasOne(Usertype::class, 'id_usertype', 'usertype');
     }
 }

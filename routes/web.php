@@ -10,7 +10,6 @@ use App\Livewire\BackedEnd\BackedEnd;
 Route::get('/', FrontEnd::class); // Route to Livewire component
 Route::post('/register', Register::class)->name('register');
 Route::get('/login', Login::class)->name('login');
-Route::get('/select', Register::class)->name('select');
 Route::get('/lupa-kata-sandi', [FrontEnd::class]); // Route to Livewire component
 Route::get('/reset', Reset::class);
 Route::prefix('admin')->middleware(['auth', 'session.expiration'])->group(function () { 
