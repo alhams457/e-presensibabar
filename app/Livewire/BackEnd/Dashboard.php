@@ -10,7 +10,8 @@ class Dashboard extends Component
     #[Layout('components.layouts.backed_end.backed_end')]
     public function render()
     {
-        return view('livewire.backend.dashboard');
+        $title = 'Dashboard';
+        return view('livewire.backend.dashboard',['title' => $title]);
 
     }
 }
