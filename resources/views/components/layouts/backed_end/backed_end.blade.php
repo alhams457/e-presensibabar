@@ -4,14 +4,32 @@
     <head>
         
 
-      @include('partials.backed_end.head')
+      {{-- @include('partials.backed_end.head') --}}
+
+        <meta charset="utf-8" />
+        <title>Starter | Dastone - Admin & Dashboard Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{{ asset('assets/backed_end/images/favicon.ico') }}">
+
+
+        <!-- App css -->
+        <link href="{{ asset('assets/backed_end/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/backed_end/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/backed_end/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+        
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     </head>
 
     <body>
-         @include('partials.backed_end.top_bar')        
+         @livewire('backend.partials.top-bars')        
 
-        @include('partials.backed_end.left_bars')
+        @livewire('backend.partials.left-bars')
 
         <div class="page-wrapper">
 

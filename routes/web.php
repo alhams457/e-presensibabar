@@ -42,6 +42,7 @@ Route::post('/register', Register::class)->name('register');
 Route::get('/login', Login::class)->name('login');
 Route::get('/lupa-kata-sandi', [FrontEnd::class]); // Route to Livewire component
 
+
 Route::prefix('admin')
 ->middleware(['auth', 'session.expiration'])
 ->group(function () { 
