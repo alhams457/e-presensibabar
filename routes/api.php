@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\PresensiController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/user', function (Request $request) {
@@ -18,6 +19,7 @@ Route::prefix('/v2/android')->group(function () {
 
     Route::middleware('jwt.auth')->group(function() {
         Route::get('me',                            [AuthController::class, 'me']);
+        Route::post('presensi',                      [PresensiController::class, 'presensi']);
     });
 });
 
