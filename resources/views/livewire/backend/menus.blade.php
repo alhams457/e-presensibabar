@@ -1,4 +1,7 @@
 <div>
+
+    
+    
     @if(isset($menus) && $menus->isNotEmpty())
         @foreach($menus as $m)
             @if($m->submenu)
@@ -13,7 +16,7 @@
                             @foreach($m->submenu as $submenu)
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a href="{{ url('admin/' . $m->menu_controller . '/' . $submenu->submenu_function) }}" class="nav-link ">{{ $submenu->submenu_name }}</a>
+                                        <a href="{{ url('admin/' . $m->menu_controller . '/' . $submenu->submenu_function) }}" class="nav-link " wire:navigate>{{ $submenu->submenu_name }}</a>
                                     </li>
                                 </ul>
                             @endforeach
